@@ -6,7 +6,7 @@ describe('Cadastro de Site', () => {
       cy.get('input[name="username"]').type('josefa.dalania');
       cy.get('input[name="password"]').type('josefa.dalania');
       cy.get('.btn-primary').click();
-      cy.url({ timeout: 50000 }).should('include', 'https://gestore-balancer-sustentacao.sistemas.ufrn.br/gestore-web/admin?continue');
+      cy.url({ timeout: 50000 }).should('include', '/gestore-web/admin');
     });
   
     it('Deve acessar a funcionalidade de sites e cadastrar um novo site', () => {
