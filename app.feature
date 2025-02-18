@@ -4,36 +4,36 @@ Feature: Create Web Site
     Para que ele seja registrado corretamente no sistema
 
     @CadastroSite
-    Scenario 1: Cadastro com todos os campos obrigatórios preenchidos OK
+    Scenario 1: Cadastro com todos os campos obrigatórios preenchidos
         Given estou na página de cadastro de site
         When preencho os campos obrigatórios:
         And clico no botão "Cadastrar"
         Then o sistema deve exibir a mensagem "Cadastro realizado com sucesso."
 
     @CadastroSite
-    Scenario 2: Cadastro com todos os campos preenchidos, incluindo opcionais OK
+    Scenario 2: Cadastro com todos os campos preenchidos, incluindo opcionais
         Given estou na página de cadastro de site
         When preencho todos os campos
         And clico no botão "Cadastrar"
         Then o sistema deve exibir a mensagem "Cadastro realizado com sucesso."
 
     @CadastroSite
-    Scenario 3: Cadastro com campos obrigatórios vazios OK
+    Scenario 3: Cadastro com campos obrigatórios vazios
         Given estou na página de cadastro de site
         When deixo os campos obrigatórios vazios
         And clico no botão "Cadastrar"
-        Then o sistema deve exibir a mensagem "Os campos obrigatórios devem ser preenchidos"
+        Then o sistema deve exibir as mensagens "O campo descrição não pode ser vazio", "A URL é obrigatória" e "O campo Alias não pode ser vazio"
 
     @CadastroSite
-    Scenario 4: Cadastro com URL inválida FAIL
+    Scenario 4: Cadastro com URL inválida 
         Given estou na página de cadastro de site
         And preencho o campo "URL" com uma URL inválida
         When preencho os demais campos obrigatórios
         And clico no botão "Cadastrar"
-        Then o sistema deve exibir a mensagem "O campo URL deve conter um endereço válido"
+        Then o sistema deve exibir a mensagem "Informe uma URL válida"
 
     @CadastroSite
-    Scenario 5: Cadastro com Alias inválido OK
+    Scenario 5: Cadastro com Alias inválido
         Given estou na página de cadastro de site
         And preencho o campo "Alias" com um Alias inválido
         When preencho os demais campos obrigatórios

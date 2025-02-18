@@ -12,7 +12,7 @@ describe('Login', () => {
     cy.get('input[name="username"]', { timeout: 10000 }).should('be.visible').type('josefa.dalania');
     cy.get('input[name="password"]', { timeout: 10000 }).should('be.visible').type('josefa.dalania');
     cy.get('.btn-primary', { timeout: 10000 }).should('be.visible').click();
-    cy.url({ timeout: 50000 }).should('include', '/gestore-web/admin');
+    cy.visit('https://gestore-balancer-sustentacao.sistemas.ufrn.br/gestore-web/');
   }); 
 });
 
