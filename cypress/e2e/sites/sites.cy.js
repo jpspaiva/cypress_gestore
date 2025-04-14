@@ -1,7 +1,7 @@
 describe('Cadastro de Site', () => {
   before(() => {
       // Faz login apenas uma vez antes de todos os testes
-      cy.visit('https://gestore-balancer-sustentacao.sistemas.ufrn.br/gestore-web/login', { timeout: 20000 });
+      cy.visit('https://gestore-balancer-sustentacao.sistemas.ufrn.br/gestore-web/login', { timeout: 40000 });
       cy.get('.card-simple', { timeout: 5000 }).click();
       cy.get('input[name="username"]', { timeout: 5000 }).type('josefa.dalania');
       cy.get('input[name="password"]', { timeout: 5000 }).type('josefa.dalania');
